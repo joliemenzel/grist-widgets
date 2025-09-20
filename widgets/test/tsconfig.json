@@ -1,0 +1,12 @@
+{
+  "extends": "../buildtools/tsconfig-base.json",
+  "include": [
+    "*",
+    "**/*",
+  ],
+  "compilerOptions": {
+    "paths": {
+      "app/*": ["test/app/*"]
+    }
+  }
+}
