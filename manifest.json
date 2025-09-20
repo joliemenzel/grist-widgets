@@ -129,13 +129,14 @@
     "lastUpdatedAt": "2024-08-18T17:58:38-04:00"
   },
   {
-      "name": "Hello Table",
-      "url": "https://joliemenzel.github.io/grist-widgets/widgets/hello-table/index.html",
-      "description": "Minimal example test widget",
-      "authors": ["Jolie Menzel"],
-      "accessLevel": "read table",
-      "renderAfterReady": true,
-      "lastUpdatedAt": "2025-09-19T21:00:00-04:00"
+    "name": "Hello Table",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/hello-table/index.html",
+    "widgetId": "@joliemenzel/hello-table",
+    "description": "Minimal example test widget",
+    "authors": ["Jolie Menzel"],
+    "accessLevel": "read table",
+    "renderAfterReady": true,
+    "lastUpdatedAt": "2025-09-19T21:00:00-04:00"
   },
   {
     "name": "Inspect record",
