@@ -1,7 +1,7 @@
 [
   {
     "name": "Action button",
-    "url": "https://joliemenzel.github.io/grist-widget/actionbutton/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/actionbutton/index.html",
     "widgetId": "@gristlabs/widget-actionbutton",
     "published": true,
     "accessLevel": "full",
@@ -18,7 +18,7 @@
   },
   {
     "name": "Calendar",
-    "url": "https://joliemenzel.github.io/grist-widget/calendar/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/calendar/index.html",
     "widgetId": "@gristlabs/widget-calendar",
     "published": true,
     "accessLevel": "full",
@@ -30,7 +30,7 @@
         "cdn.jsdelivr.net"
       ],
       "entrypoints": [
-        "https://joliemenzel.github.io/grist-widget/calendar/i18n/"
+        "https://joliemenzel.github.io/grist-widgets/widgets/calendar/i18n/"
       ]
     },
     "description": "Show records as events in a calendar view. Choose between daily, monthly, or yearly views.",
@@ -45,7 +45,7 @@
   },
   {
     "name": "Copy to clipboard",
-    "url": "https://joliemenzel.github.io/grist-widget/clipboard/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/clipboard/index.html",
     "widgetId": "@gristlabs/widget-clipboard",
     "published": true,
     "accessLevel": "read table",
@@ -62,7 +62,7 @@
   },
   {
     "name": "Custom widget builder",
-    "url": "https://joliemenzel.github.io/grist-widget/custom-widget-builder/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/custom-widget-builder/index.html",
     "widgetId": "@berhalak/custom-widget-builder",
     "published": true,
     "accessLevel": "none",
@@ -79,7 +79,7 @@
   },
   {
     "name": "Drop-down Widget",
-    "url": "https://joliemenzel.github.io/grist-widget/drop-down/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/drop-down/index.html",
     "widgetId": "@gristlabs/widget-drop-down",
     "published": true,
     "accessLevel": "read table",
@@ -96,7 +96,7 @@
   },
   {
     "name": "Dropbox embedder",
-    "url": "https://joliemenzel.github.io/grist-widget/dropbox-embed/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/dropbox-embed/index.html",
     "widgetId": "@gristlabs/dropbox-embed",
     "published": true,
     "accessLevel": "read table",
@@ -113,7 +113,7 @@
   },
   {
     "name": "Flashcards",
-    "url": "https://joliemenzel.github.io/grist-widget/flashcards/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/flashcards/index.html",
     "widgetId": "@gristlabs/flashcards",
     "published": true,
     "accessLevel": "read table",
@@ -130,7 +130,7 @@
   },
   {
     "name": "Inspect record",
-    "url": "https://joliemenzel.github.io/grist-widget/inspect/onRecord.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/inspect/onRecord.html",
     "widgetId": "@gristlabs/widget-inspect#onRecord",
     "published": true,
     "accessLevel": "read table",
@@ -147,7 +147,7 @@
   },
   {
     "name": "Inspect table",
-    "url": "https://joliemenzel.github.io/grist-widget/inspect/onRecords.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/inspect/onRecords.html",
     "widgetId": "@gristlabs/widget-inspect#onRecords",
     "published": true,
     "accessLevel": "read table",
@@ -164,7 +164,7 @@
   },
   {
     "name": "Inspect options",
-    "url": "https://joliemenzel.github.io/grist-widget/inspect/onOptions.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/inspect/onOptions.html",
     "widgetId": "@gristlabs/widget-inspect#onOptions",
     "published": true,
     "renderAfterReady": true,
@@ -180,7 +180,7 @@
   },
   {
     "name": "Inspect API",
-    "url": "https://joliemenzel.github.io/grist-widget/inspect/api.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/inspect/api.html",
     "widgetId": "@gristlabs/widget-inspect#api",
     "published": true,
     "renderAfterReady": true,
@@ -196,7 +196,7 @@
   },
   {
     "name": "Invoices",
-    "url": "https://joliemenzel.github.io/grist-widget/invoices",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/invoices",
     "widgetId": "@gristlabs/widget-invoices",
     "published": true,
     "accessLevel": "read table",
@@ -213,7 +213,7 @@
   },
   {
     "name": "Map",
-    "url": "https://joliemenzel.github.io/grist-widget/map/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/map/index.html",
     "widgetId": "@gristlabs/widget-map#map",
     "published": true,
     "accessLevel": "read table",
@@ -230,7 +230,7 @@
   },
   {
     "name": "Markdown",
-    "url": "https://joliemenzel.github.io/grist-widget/markdown",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/markdown",
     "widgetId": "@gristlabs/widget-markdown",
     "published": true,
     "accessLevel": "full",
@@ -247,7 +247,7 @@
   },
   {
     "name": "Notepad",
-    "url": "https://joliemenzel.github.io/grist-widget/notepad",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/notepad",
     "widgetId": "@gristlabs/widget-notepad",
     "published": true,
     "accessLevel": "full",
@@ -264,7 +264,7 @@
   },
   {
     "name": "Pivot table",
-    "url": "https://joliemenzel.github.io/grist-widget/pivottable/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/pivottable/index.html",
     "widgetId": "@gristlabs/widget-pivottable",
     "published": true,
     "accessLevel": "read table",
@@ -280,7 +280,7 @@
   },
   {
     "name": "Print labels",
-    "url": "https://joliemenzel.github.io/grist-widget/printlabels/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/printlabels/index.html",
     "widgetId": "@gristlabs/widget-printlabels",
     "published": true,
     "accessLevel": "read table",
@@ -297,7 +297,7 @@
   },
   {
     "name": "Purchase orders",
-    "url": "https://joliemenzel.github.io/grist-widget/purchase-orders",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/purchase-orders",
     "widgetId": "@gristlabs/widget-purchase-orders",
     "published": true,
     "accessLevel": "read table",
@@ -314,7 +314,7 @@
   },
   {
     "name": "QR code",
-    "url": "https://joliemenzel.github.io/grist-widget/qrcode/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/qrcode/index.html",
     "widgetId": "@gristlabs/widget-qrcode",
     "published": true,
     "accessLevel": "read table",
@@ -330,7 +330,7 @@
   },
   {
     "name": "HTML viewer",
-    "url": "https://joliemenzel.github.io/grist-widget/renderhtml/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/renderhtml/index.html",
     "widgetId": "@gristlabs/widget-renderhtml",
     "published": true,
     "accessLevel": "read table",
@@ -347,7 +347,7 @@
   },
   {
     "name": "Grist video player",
-    "url": "https://joliemenzel.github.io/grist-widget/rendervideo/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/rendervideo/index.html",
     "widgetId": "@gristlabs/widget-rendervideo",
     "published": true,
     "accessLevel": "read table",
@@ -364,7 +364,7 @@
   },
   {
     "name": "Image viewer",
-    "url": "https://joliemenzel.github.io/grist-widget/viewer/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/viewer/index.html",
     "widgetId": "@gristlabs/widget-viewer",
     "published": true,
     "accessLevel": "read table",
@@ -381,7 +381,7 @@
   },
   {
     "name": "JupyterLite Notebook",
-    "url": "https://joliemenzel.github.io/grist-widget/jupyterlite/lab/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/jupyterlite/lab/index.html",
     "widgetId": "@gristlabs/widget-jupyterlite",
     "published": true,
     "accessLevel": "read table",
@@ -397,7 +397,7 @@
   },
   {
     "name": "Advanced charts",
-    "url": "https://joliemenzel.github.io/grist-widget/chart/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/chart/index.html",
     "widgetId": "@gristlabs/widget-chart",
     "published": true,
     "accessLevel": "full",
@@ -413,7 +413,7 @@
   },
   {
     "name": "Simple table filter",
-    "url": "https://joliemenzel.github.io/grist-widget/varamil/simplefilter/index.html",
+    "url": "https://joliemenzel.github.io/grist-widgets/widgets/varamil/simplefilter/index.html",
     "widgetId": "@varamil/widget-simplefilter",
     "published": true,
     "accessLevel": "read table",
