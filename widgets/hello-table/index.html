@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hello Table (Grist widget)</title>
+  <style>
+    :root { --bg:#fff; --fg:#111; --muted:#6b7280; --hilite:#f3f4f6; --border:#e5e7eb; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,sans-serif; }
+    header { padding:12px 16px; border-bottom:1px solid var(--border); }
+    h1 { margin:0; font-size:16px; }
+    p { margin:6px 0 0; color:var(--muted); }
+    main { padding:12px 16px; }
+    table { border-collapse:collapse; width:100%; }
+    th, td { border:1px solid var(--border); padding:8px 10px; text-align:left; }
+    th { background:#fafafa; font-weight:600; }
+    tr.selected { background:var(--hilite); }
+    .hint { margin:8px 0 12px; color:var(--muted); font-size:12px; }
+    .pill { display:inline-block; padding:2px 8px; border:1px solid var(--border); border-radius:999px; font-size:12px; color:var(--muted); }
+    .error { color:#b91c1c; font-weight:600; }
+    footer { padding:8px 16px 16px; color:var(--muted); font-size:12px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hello Table</h1>
+    <p>Maps two columns — <strong>Title</strong> &amp; <strong>Score</strong> — then highlights your current selection.</p>
+  </header>
+
+  <main>
+    <div class="hint">
+      <span class="pill" id="status">waiting for Grist…</span>
+    </div>
+    <table id="grid" aria-label="Hello Table">
+      <thead><tr><th>Title</th><th>Score</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div id="msg" class="error" style="display:none;"></div>
+  </main>
+
+  <footer>
+    Tip: in the mapping dialog, point <em>Title</em> and <em>Score</em> to any two columns you like.
+  </footer>
+
+  <!-- IMPORTANT: load the plugin API from YOUR Grist host -->
+  <script src="https://grist.greenhillzone.synology.me/plugin/grist-plugin-api.js"></script>
+  <script>
+    // 1) Ask Grist to map two logical columns to real ones.
+    const REQUIRED = ['Title','Score'];
+    const statusEl = document.getElementById('status');
+    const tbody = document.querySelector('#grid tbody');
+    const msgEl = document.getElementById('msg');
+    let currentRecords = [];
+    let selectedId = null;
+
+    function setStatus(t) { statusEl.textContent = t; }
+    function showError(t) { msgEl.style.display='block'; msgEl.textContent = t; }
+
+    function render() {
+      tbody.innerHTML = '';
+      for (const r of currentRecords) {
+        const tr = document.createElement('tr');
+        if (r.id === selectedId) tr.classList.add('selected');
+        const tdA = document.createElement('td');
+        const tdB = document.createElement('td');
+        tdA.textContent = r.Title ?? '';
+        tdB.textContent = (r.Score ?? '') + '';
+        tr.append(tdA, tdB);
+        tbody.appendChild(tr);
+      }
+    }
+
+    // Guard: if someone opens this on GitHub Pages directly, grist may be undefined.
+    if (!window.grist) {
+      setStatus('dev preview (no Grist detected)');
+      currentRecords = [
+        {id:1, Title:'Open in Grist to map columns', Score: 42},
+        {id:2, Title:'This is a static preview', Score: 7}
+      ];
+      render();
+    } else {
+      try {
+        grist.ready({ requiredColumns: REQUIRED });
+        setStatus('waiting for data…');
+
+        grist.onRecords((records) => {
+          currentRecords = records || [];
+          render();
+          setStatus(`rows: ${currentRecords.length}`);
+        });
+
+        grist.onRecord((row) => {
+          selectedId = row?.id ?? null;
+          render();
+        });
+
+        // Optional: react to option changes (e.g., future settings panel)
+        grist.onOptions((opts) => {
+          // console.log('options', opts);
+        });
+      } catch (e) {
+        showError('Failed to initialize Grist widget. See console.');
+        console.error(e);
+      }
+    }
+  </script>
+</body>
+</html>
