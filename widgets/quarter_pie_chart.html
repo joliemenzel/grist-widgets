@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quarter Breakdown</title>
+  <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: white;
+    }
+    h2 {
+      margin-bottom: 8px;
+      color: #333;
+    }
+    #no-data {
+      color: #999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="chart-title">Select a Quarter</h2>
+  <p id="no-data">No data available for this quarter.</p>
+  <canvas id="myChart" width="400" height="400"></canvas>
+
+  <script>
+    let chart = null;
+
+    // Tell Grist this widget is ready
+    grist.ready({
+      requiredAccess: 'read table',
+      columns: [
+        { name: 'Quarter',            type: 'Any' },
+        { name: 'Total_Essentials',   type: 'Numeric' },
+        { name: 'Total_Non_Essentials', type: 'Numeric' },
+        { name: 'Net_Income',         type: 'Numeric' },
+      ]
+    });
+
+    // Fire whenever the user selects a row in the linked Summary table
+    grist.onRecord(function(record) {
+      const essentials    = record.Total_Essentials    || 0;
+      const nonEssentials = record.Total_Non_Essentials || 0;
+      const saved         = record.Net_Income           || 0;
+      const quarter       = record.Quarter              || 'Quarter';
+
+      const noData = essentials === 0 && nonEssentials === 0 && saved === 0;
+      document.getElementById('no-data').style.display = noData ? 'block' : 'none';
+      document.getElementById('chart-title').textContent = quarter;
+
+      const data = {
+        labels: ['Essentials', 'Non-Essentials', 'Saved'],
+        datasets: [{
+          data: [essentials, nonEssentials, saved],
+          backgroundColor: ['#e07b54', '#5b8dd9', '#57b894'],
+          borderWidth: 1
+        }]
+      };
+
+      if (chart) {
+        // Update existing chart
+        chart.data = data;
+        chart.update();
+      } else {
+        // Create chart for the first time
+        const ctx = document.getElementById('myChart').getContext('2d');
+        chart = new Chart(ctx, {
+          type: 'pie',
+          data: data,
+          options: {
+            plugins: {
+              legend: { position: 'bottom' },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    const value = context.parsed;
+                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                    const pct   = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
+                    return ` $${value.toFixed(2)} (${pct}%)`;
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
