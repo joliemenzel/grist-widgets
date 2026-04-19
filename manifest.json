@@ -139,6 +139,16 @@
     "lastUpdatedAt": "2025-09-19T21:00:00-04:00"
   },
   {
+  "name": "Quarter Pie Chart",
+  "url": "https://joliemenzel.github.io/grist-widgets/widgets/quarter-pie-chart/index.html",
+  "widgetId": "@joliemenzel/quarter-pie-chart",
+  "description": "Pie chart for my Expenses",
+  "authors": ["Jolie Menzel"],
+  "accessLevel": "read table",
+  "renderAfterReady": true,
+  "lastUpdatedAt": "2026-04-19T00:00:00-04:00"
+  }, 
+  {
     "name": "Inspect record",
     "url": "https://joliemenzel.github.io/grist-widgets/widgets/inspect/onRecord.html",
     "widgetId": "@gristlabs/widget-inspect#onRecord",
